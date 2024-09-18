@@ -13,7 +13,7 @@ import geojsoncontour
 gmaps = googlemaps.Client(key=os.environ.get("GOOGLE_MAPS_API_KEY"))
 
 # Load cached travel time data
-cache_file = "travel_times_cache.json"
+cache_file = "travel_times.cache.json"
 if os.path.exists(cache_file):
     with open(cache_file, "r") as f:
         travel_time_cache = json.load(f)

@@ -1,4 +1,4 @@
 input_addresses.json
 map.html
 map.zip
-*_cache.json
+*.cache.json
