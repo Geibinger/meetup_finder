@@ -48,6 +48,7 @@ def get_travel_time(origin, destination):
     if origin_key in travel_time_cache:
         return travel_time_cache[origin_key]
     try:
+        print(f"Making API request for travel time between {origin} and {destination}")
         result = gmaps.distance_matrix(origin, destination, mode="transit")
         if result["rows"][0]["elements"][0]["status"] == "OK":
             duration = result["rows"][0]["elements"][0]["duration"]["value"]
@@ -57,6 +58,7 @@ def get_travel_time(origin, destination):
         else:
             return None
     except Exception as e:
+        print(f"Error during API request: {e}")
         return None
 
 
